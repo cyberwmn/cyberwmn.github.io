@@ -1,27 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
-</head>
-<body>
+---
+layout: default
+---
 
-<header>
-    <h1>{{ site.title }}</h1>
-    <a href="/">Home</a>
-</header>
-
-<main>
-    <h2>{{ page.title }}</h2>
-    <p>{{ page.date | date: "%B %d, %Y" }}</p>
+<article class="post">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+        {{ page.date | date: "%B %d, %Y" }} · {{ page.categories | join: ", " }}
+    </p>
 
     {{ content }}
-</main>
-
-<footer>
-    <p>© {{ site.time | date: "%Y" }} {{ site.author }}</p>
-</footer>
-
-</body>
-</html>
+</article>
 
